@@ -8,36 +8,32 @@
 
 int main(void)
 {
-	int i;
-	int j;
-	int k;
+	int ones = '0';
+	int tens = '0';
+	int hundreds = '0';
 
-	for (i = '0'; i <= '9'; i++)
+	for (hundreds = '0'; hundreds <= '9'; hundreds++)
 	{
-		j = '0';
-		while
-		(j <= '9');
+		for (tens = '0'; tens <= '9'; tens++)
 		{
-			k = '0';
-			while
-			(k <= '9');
+			for (ones = '0'; ones <= '9'; ones++)
 			{
-				if (i < j && j < k)
+				if (!((ones == tens) || (tens == hundreds) ||
+							(tens > ones) || (hundreds > tens)))
 				{
-					putchar(i);
-					putchar(j);
-					putchar(k);
-					if (i != '7')
+					putchar(hundreds);
+					putchar(tens);
+					putchar(ones);
+					if (!(ones == '9' && hundreds == '7' && tens == '8'))
 					{
-					putchar(',');
-					putchar(' ');
+						putchar(',');
+						putchar(' ');
 					}
 				}
-				k++;
 			}
-			j++;
 		}
 	}
 	putchar('\n');
+
 	return (0);
 }
