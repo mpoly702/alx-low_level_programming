@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
  *  main - This is one hell of a project
@@ -9,25 +8,34 @@
 
 int main(void)
 {
-	int i;
-	int j;
+	int i, j;
+	int a, b, c, d;
 
-	for (i = 0; i < 100; i++)
+	for (i = 0; i < 99; i++)
 	{
-		for (j = 0; j < 100; j++)
+		a = i / 10;
+		a = i % 10;
+		
+		for (j = 0; j < 99; j++)
 		{
-			putchar((i / 10) + 48);
-			putchar((i % 10) + 48);
-			putchar(' ');
-			putchar((j / 10) + 48);
-			putchar((j % 10) + 48);
-			if (i != 98 || j != 99)
+			c = j / 10;
+			d = j % 10;
+			if (a < c || (a == c && b < d))
 			{
-				putchar(',');
+				putchar(a);
+				putchar(b);
 				putchar(' ');
+				putchar(c);
+				putchar(d);
+
+				if (a != 9 && b != 8)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
 	putchar('\n');
+
 	return (0);
-}
