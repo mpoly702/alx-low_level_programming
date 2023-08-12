@@ -15,7 +15,6 @@ int main(void)
 	{
 		a = i / 10;
 		a = i % 10;
-		
 		for (j = 0; j < 99; j++)
 		{
 			c = j / 10;
@@ -37,5 +36,5 @@ int main(void)
 		}
 	}
 	putchar('\n');
-
 	return (0);
+}
