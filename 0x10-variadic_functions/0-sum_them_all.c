@@ -9,18 +9,23 @@
  */
 int sum_them_all(const unsigned int n, ...)
 {
-	va_list valist;
-	int sum = 0;
-	unsigned int i;
+	va_list quarrel;
+	int a, add = 0;
+	unsigned int b = n;
 
-	va_start(valist, n);
+	va_start(quarrel, n);
 
-	for (i = 0; i < n; i++)
+	while (b > 0)
 	{
-		sum += va_arg(valist, int);
+		a = va_arg(quarrel, int);
+		add += a;
+		b--;
+	}
+	if (n == 0)
+	{
+		return (0);
 	}
 
-	va_end(valist);
-
-	return (sum);
+	va_end(quarrel);
+	return (add);
 }
